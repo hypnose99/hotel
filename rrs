@@ -1,0 +1,11 @@
+[33mcommit d6c0ce9bc64252d136fef658b9f673dd8c92c635[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Jonathan <jojo@gmail.com>
+Date:   Fri Dec 6 00:52:55 2024 +0000
+
+    Configurer l'administrateur Django
+
+[33mcommit f9459aae2dac44f4f521745bb4c2ae18f4c319b0[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Jonathan <jojo@gmail.com>
+Date:   Thu Dec 5 23:49:22 2024 +0000
+
+    Créer un nouveau projet Django
