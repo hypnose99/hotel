@@ -267,7 +267,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="headline_part centered margin-top-75 margin-bottom-45">Sign Up <span>Hi there! Create a free account today.</span></h3>
+                        <h3 class="headline_part centered margin-top-75 margin-bottom-45">Connexion <span>Bonjour ! Connecter vous pour reserver.</span></h3>
                     </div>
                 </div>
             </div>
@@ -284,37 +284,13 @@
                                     <div class="tab_container alt">
                                         <div class="tab_content" id="tab2" style="display: none;">
                                             <form method="POST" class="register">
-                                                {% comment %}
-                                                            <p class="utf_row_form utf_form_wide_block">
-                                                                <label for="username2">
-                                                                    <input type="text" class="input-text" name="username" id="username2" value="" placeholder="Username" />
-                                                                </label>
-                                                            </p>
-                                                            <p class="utf_row_form utf_form_wide_block">
-                                                                <label for="email2">
-                                                                    <input type="text" class="input-text" name="email" id="email2" value="" placeholder="Email" />
-                                                                </label>
-                                                            </p>
-                                                            <p class="utf_row_form utf_form_wide_block">
-                                                                <label for="password1">
-                                                                    <input class="input-text" type="password" name="password1" id="password1" placeholder="Password" />
-                                                                </label>
-                                                            </p>
-                                                            <p class="utf_row_form utf_form_wide_block">
-                                                                <label for="password2">
-                                                                    <input class="input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" />
-                                                                </label>
-                                                            </p>
-                                                {% endcomment %}
                                                 {% csrf_token %}
-                                                {{form.full_name}}
-                                                {{form.email}}
-                                                {{form.username}}
-                                                {{form.phone}}
-                                                {{form.password1}}
-                                                {{form.password2}}
-                                        
-                                                <input type="submit" class="button border fw margin-top-10" name="register" value="S'ENREGISTRER" />
+                                                
+                                                <input type="email" class="input-text" name="email" id="" placeholder="Email" />
+                                                 
+                                                <input class="input-text" type="password" name="password" id="" placeholder="Mot de passe" />
+                                             
+                                                <input type="submit" class="button border fw margin-top-10" name="register" value="SE CONNECTER" />
                                             </form>
                                         </div>
                                     </div>

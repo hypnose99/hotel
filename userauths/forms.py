@@ -3,9 +3,9 @@ from django.contrib.auth.forms import UserCreationForm
 
 from userauths.models import User, Profile
 
-
+# Crée un formulaire appartir d'un model ici User
 class UserRegisterForm(UserCreationForm):
-    full_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Entrer nom et prénoms", 'class': "a custom class"}))
+    full_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Nom et prénoms", 'class': "a custom class"}))
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Username", 'class': "a custom class"}))
     email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Adresse email ", 'class': "a custom class"}))
     phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Numéro de téléphone", 'class': "a custom class"}))
