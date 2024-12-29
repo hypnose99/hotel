@@ -143,7 +143,7 @@ AUTH_USER_MODEL = "userauths.User"
 
 JAZZMIN_SETTINGS = {
     'site_header': "Gestion Hôtel",
-    'site_brand': "Bienvenue chez Hypnose",
+    'site_brand': "Reservation Hôtel",
     'site_logo': "/images/logo.png",
     'copyright': "All Right Reserved 2024",
     "welcome_sign": "Entrer vos identifiants ",

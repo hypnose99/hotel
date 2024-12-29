@@ -43,7 +43,7 @@ def RegisterView(request):
 
 
 def loginView(request):
-    # Vérifie si l'utilisateur est connecté et exécute une redirection
+    # Vérifie si l'utilisateur est connecté si oui le redirige vers la page d'acceul avec une alerte
     if request.user.is_authenticated:
         messages.warning(request, "Vous êtes déjà connecté")
         return redirect("hotel:index")
@@ -58,20 +58,21 @@ def loginView(request):
             user_query = User.objects.get(email= email)
             user_auth = authenticate(request, email=email, password=password)
              
-             # Vérifie si l'information existe dans la base et connecte l'utilisateur
+             # Vérifie si l'utilisateur c'est bien connecté puis faire une redirection 
             if user_query is not None:
                 login(request, user_auth)
                 messages.success(request, "Vous êtes connecté ")
                 next_url = request.GET.get("next", "hotel:index")
                 return redirect(next_url)
             else:
-                messages.error(request, "email ou mot de passe est incorrecte")
+                messages.error(request, "email ou le mot de passe est incorrecte")
                 return redirect("userauths:sign-in")
         except:
             messages.error(request, "L'utilisateur n'existe pas")
             return redirect("userauths:sign-in")
     
     return render(request, "userauths/sign-in.html")
+
 
 def LogoutView(request):
     logout(request)

@@ -19,13 +19,14 @@ GENDER = (
 )
 
 
-# Créer un repectoir selon utilisateur
+# Créer un repectoir selon utilisateur pour les importations des images ou autre
 def user_directory_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "%s.%s" % (instance.user.id, ext)
     return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 
+# Création de la table utilisateur
 class User(AbstractUser):
     full_name = models.CharField(max_length=1000, null=True, blank=True)
     username = models.CharField(max_length=100, null=True, blank=True)
@@ -35,7 +36,7 @@ class User(AbstractUser):
 
     otp = models.CharField(max_length=100, null=True, blank=True)
 
-    # Requier un username pour se connecter
+    # Requier un email name pour se connecter
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['username']
 
@@ -44,6 +45,7 @@ class User(AbstractUser):
 
 
 # Créer d'un model profil et lier a user
+# ShortUUIDField importer ce module pour creer un code
 class Profile(models.Model):
     pid = ShortUUIDField(length=7, max_length=25, alphabet="abcdefghijklmnopqrstuvxyz123")
     image = models.ImageField(upload_to=user_directory_path, default="default.jpg", null=True, blank=True)
@@ -91,6 +93,6 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 
-#Utilisation de post_save pour appeler les functions
+# Utilisation de post_save pour appeler les functions
 post_save.connect(create_user_profile, sender=User)
 post_save.connect(save_user_profile, sender=User)
